@@ -1,0 +1,20 @@
+ 1)
+ 
+  File "/home/gajare_amar2023/Interact_Cloud_With_Python/BigQuery_using_Python/main.py", line 3, in <module>
+    from generate_data import *
+  File "/home/gajare_amar2023/Interact_Cloud_With_Python/BigQuery_using_Python/generate_data.py", line 2, in <module>
+    from faker import Faker
+ModuleNotFoundError: No module named 'faker'
+
+Solution : Python raises the ModuleNotFoundError: No module named 'faker' when it cannot find the library faker. 
+This error occurs if you haven’t installed faker explicitly with pip install faker 
+or 
+if you have different Python versions on your computer, and faker is not installed for your Python version.
+
+you may want to try 
+$python3 -m pip install faker or even pip3 install faker 
+or 
+$pip install faker
+
+
+2)
