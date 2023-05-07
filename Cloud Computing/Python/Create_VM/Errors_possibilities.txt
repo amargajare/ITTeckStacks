@@ -1,0 +1,47 @@
+#ImportError : Cannot import name 'compute_v1' from 'google.cloud' (unknown location)
+
+Solution : we did not install compute module that is google-cloud-compute, so command to install is
+Try installing the required package using the following command:
+
+pip install google-cloud-compute
+If that doesn't work, try installing the specific version google-cloud-compute_v1:
+
+pip install google-cloud-compute_v1==2.9.0
+If you have previously installed the package, ensure that it is updated to the latest version:
+
+pip install --upgrade google-cloud-compute_v1
+Once the package is installed, you can import the required module using:
+
+from google.cloud import compute_v1
+Alternatively, you can import it using:
+
+from google.cloud.compute_v1 import *
+This will import all the modules in google.cloud.compute_v1.
+
+Remember to check your environment and ensure that the necessary credentials have been set up for your authentication to work.
+$pip install google-cloud-compute
+
+#Run python code using 
+$/usr/bin/python3 /home/GAJARE_AMAR2023/Interact_Cloud_With_Python/Create_VM/create_vm.py
+
+
+#ERROR: key.json was not found 
+Solution : Run script from the path where key.json file exist 
+
+#ERROR 
+gleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+  File "/usr/local/lib/python3.9/dist-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 400 when requesting https://compute.googleapis.com/compute/v1/projects/lunar-alpha-386000/zones/us-central1-a/instances?alt=json returned "Windows VM instances are not included with the free trial. To use them, first enable billing on your account. You'll still be able to apply your free trial credits to eligible products and services.". Details: "[{'message': "Windows VM instances are not included with the free trial. To use them, first enable billing on your account. You'll still be able to apply your free trial credits to eligible products and services.", 'domain': 'global', 'reason': 'windowsVmNotAllowedInFreeTrialProject'}]">
+
+Solution :
+
+Create authorization credentials
+Any application that uses OAuth 2.0 to access Google APIs must have authorization credentials that identify the application to Google's OAuth 2.0 server. The following steps explain how to create credentials for your project. Your applications can then use the credentials to access APIs that you have enabled for that project.
+
+Go to the Credentials page.
+Click Create credentials > OAuth client ID.
+Select the Web application application type.
+Name your OAuth 2.0 client and click Create
+After configuration is complete, take note of the client ID that was created. You will need the client ID to complete the next steps. (A client secret is also created, but you need it only for server-side operations.)
